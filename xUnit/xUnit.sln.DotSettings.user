@@ -1,0 +1,8 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e210e532_002D5f2e_002D4546_002D94cc_002Db3fc8e0dddd8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Create" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::4282BD5E-C8AD-4241-8188-CE1A7131BA3F::net8.0::xUnitApp.TestControllers.CategoryController.CategoryControllerTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4282BD5E-C8AD-4241-8188-CE1A7131BA3F::net8.0::xUnitApp.TestControllers.CategoryController.Delete&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::4282BD5E-C8AD-4241-8188-CE1A7131BA3F::net8.0::xUnitApp.Services.TestCategoryService.Edit_CategoryService_Success&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
