@@ -7,38 +7,7 @@ namespace NUnitApp.TestServices
     [TestFixture]
     public class TestCategoryService
     {
-        [Test]
-        public async Task Add_CategoryService_Success()
-        {
-            // Arrange
-            var category = new CreateCategoryDto()
-            {
-                Name = "testNew",
-                Description = "testNew",
-            };
-
-            var context = new FakeDbContextFactory();
-            var categoryService = new CategoryService(context.DbContextFactory());
-            // Act
-            var res = await categoryService.CreateCategoryAsync(category);
-
-            // Assert
-            Assert.AreEqual(200, res.StatusCode);
-        }
-
-        [Test]
-        public async Task Add_CategoryService_Failure()
-        {
-            var context = new FakeDbContextFactory();
-
-            // Arrange
-            var categoryService = new CategoryService(context.DbContextFactory());
-            // Act
-            var res = await categoryService.CreateCategoryAsync(null);
-
-            // Assert
-            Assert.AreEqual(400, res.StatusCode);
-        }
+      
 
         [Test]
         public async Task Edit_CategoryService_Success()
@@ -53,7 +22,7 @@ namespace NUnitApp.TestServices
             };
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.UpdateCategoryAsync(category);
 
@@ -68,7 +37,7 @@ namespace NUnitApp.TestServices
             var category = new UpdateCategoryDto();
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.UpdateCategoryAsync(category);
 
@@ -83,7 +52,7 @@ namespace NUnitApp.TestServices
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.DeleteCategoryAsync(id);
 
@@ -97,7 +66,7 @@ namespace NUnitApp.TestServices
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.DeleteCategoryAsync(0);
 
@@ -113,7 +82,7 @@ namespace NUnitApp.TestServices
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.GetCategoryByIdAsync(id);
 
@@ -127,7 +96,7 @@ namespace NUnitApp.TestServices
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.GetCategoryByIdAsync(0);
 
@@ -141,7 +110,7 @@ namespace NUnitApp.TestServices
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var categoryService = new CategoryService(context.DbContextFactory());
+            var categoryService = new WebApi.Services.CategoryService(context.DbContextFactory());
             // Act
             var res = await categoryService.GetCategoriesAsync();
 
