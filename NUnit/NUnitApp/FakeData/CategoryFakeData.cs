@@ -1,10 +1,10 @@
 using WebApi.Data.Entities;
 
-namespace xUnitApp.FakeData;
+namespace NUnitApp.FakeData;
 
 public class CategoryFakeData
 {
-    public IEnumerable<Category> GetAllPost()
+    public IEnumerable<Category> GetAllCategory()
     {
         var posts = new List<Category>();
         posts.Add(new Category { Id = 1, Description = "test1", Name = "test1", CreatedAt = DateTimeOffset.UtcNow });
