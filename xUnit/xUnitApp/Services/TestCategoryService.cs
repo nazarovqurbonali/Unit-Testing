@@ -10,16 +10,16 @@ namespace xUnitApp.Services
         public async Task Add_CategoryService_Success()
         {
             // Arrange
-            var post = new CreateCategoryDto()
+            var category = new CreateCategoryDto()
             {
                 Name = "testNew",
                 Description = "testNew",
             };
 
             var context = new FakeDbContextFactory();
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.CreateCategoryAsync(post);
+            var res = await categoryService.CreateCategoryAsync(category);
 
             // Assert
             Assert.Equal(200, res.StatusCode);
@@ -31,9 +31,9 @@ namespace xUnitApp.Services
             var context = new FakeDbContextFactory();
 
             // Arrange
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.CreateCategoryAsync(null);
+            var res = await categoryService.CreateCategoryAsync(null);
 
             // Assert
             Assert.Equal(400, res.StatusCode);
@@ -44,7 +44,7 @@ namespace xUnitApp.Services
         {
             const int id = 1;
             // Arrange
-            var post = new UpdateCategoryDto()
+            var category = new UpdateCategoryDto()
             {
                 Id = id,
                 Description = "testNew-update",
@@ -52,9 +52,9 @@ namespace xUnitApp.Services
             };
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.UpdateCategoryAsync(post);
+            var res = await categoryService.UpdateCategoryAsync(category);
 
             // Assert
             Assert.Equal(200, res.StatusCode);
@@ -64,12 +64,12 @@ namespace xUnitApp.Services
         public async Task Edit_CategoryService_Failure()
         {
             // Arrange
-            var post = new UpdateCategoryDto();
+            var category = new UpdateCategoryDto();
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.UpdateCategoryAsync(post);
+            var res = await categoryService.UpdateCategoryAsync(category);
 
             // Assert
             Assert.Equal(400, res.StatusCode);
@@ -78,13 +78,13 @@ namespace xUnitApp.Services
         [Fact]
         public async Task Delete_CategoryService_Success()
         {
-            const int id = 2;
+            const int id = 1;
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.DeleteCategoryAsync(id);
+            var res = await categoryService.DeleteCategoryAsync(id);
 
             // Assert
             Assert.True(res.Data);
@@ -96,9 +96,9 @@ namespace xUnitApp.Services
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.DeleteCategoryAsync(0);
+            var res = await categoryService.DeleteCategoryAsync(0);
 
             // Assert
             Assert.False(res.Data);
@@ -107,14 +107,14 @@ namespace xUnitApp.Services
         [Fact]
         public async Task GetById_CategoryService_Success()
         {
-            const int id = 3;
+            const int id = 1;
 
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.GetCategoryByIdAsync(id);
+            var res = await categoryService.GetCategoryByIdAsync(id);
 
             // Assert
             Assert.Equal(200, res.StatusCode);
@@ -126,9 +126,9 @@ namespace xUnitApp.Services
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.GetCategoryByIdAsync(0);
+            var res = await categoryService.GetCategoryByIdAsync(0);
 
             // Assert
             Assert.Equal(400, res.StatusCode);
@@ -140,12 +140,13 @@ namespace xUnitApp.Services
             // Arrange
             var context = new FakeDbContextFactory();
 
-            var postService = new CategoryService(context.DbContextFactory());
+            var categoryService = new CategoryService(context.DbContextFactory());
             // Act
-            var res = await postService.GetCategoriesAsync();
+            var res = await categoryService.GetCategoriesAsync();
 
             // Assert
             Assert.NotNull(res.Data);
+            Assert.Equal(200,res.StatusCode);
         }
     }
 }
