@@ -21,4 +21,10 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FakeDbContext\" />
+    <Folder Include="TestControllers\" />
+    <Folder Include="TestServices\" />
+  </ItemGroup>
+
 </Project>
